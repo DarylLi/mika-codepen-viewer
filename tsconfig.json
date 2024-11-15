@@ -1,0 +1,44 @@
+{
+  "compilerOptions": {
+    "target": "es5",
+    "lib": ["dom", "es2015"],
+    "allowJs": true,
+    "skipLibCheck": true,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "strict": true,
+    "forceConsistentCasingInFileNames": true,
+    "noFallthroughCasesInSwitch": true,
+    "module": "esnext",
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "experimentalDecorators": true,
+    "noEmit": false,
+    "jsx": "react-jsx",
+    "paths": {
+      "@/*": ["src/*"],
+      "@mock/*": ["src/mock/*"],
+      "@store/*": ["src/store/*"],
+      "@utils/*": ["src/utils/*"],
+      "@server/*": ["src/server/*"]
+    },
+    "baseUrl": "./"
+  },
+  "include": [
+    "src",
+    "**/*.tsx",
+    "**/*.ts",
+    "**/*.jsx",
+    "**/*.js",
+    "**/*.wasm",
+    "public/wasmLib"
+, "public/sampleFolder"  ],
+  "exclude": ["./editorTarget/", "./public/"],
+  // "files": [],
+  "composite":true,
+  // "references": [
+  //   { "path": "./tsconfig.app.json" },
+  //   { "path": "./tsconfig.node.json" }
+  // ]
+}

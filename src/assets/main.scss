@@ -1,0 +1,221 @@
+
+html,body,#root{
+    height: 100%;
+    width: 100%;
+}
+
+.editor-mika-sample{
+    background-color: #fff;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+}
+.editor-mika-sample-html {
+    z-index: 1;
+}
+.editor-mika-sample-js {
+    z-index: 3;
+}
+.editor-mika-sample-css {
+    z-index: 2;
+}
+.editor-mika-sample-html,
+.editor-mika-sample-js,
+.editor-mika-sample-css{
+    transition: all .3s;
+    width: 32%;
+    height: 40%;
+    display: flex;
+    align-items: flex-start;
+    padding-top: 30px;
+    position: absolute;
+    left: 1%;
+    .mika-mona-center-editor{
+        width: 100%;
+        height: 100%!important;
+        .react-monaco-editor-container{
+            width: 100%!important;
+            height: 100%!important;
+            border-radius: 5px;
+            .monaco-editor{
+                width: 100%!important;
+                height: 100%!important;
+                border-radius: 5px;
+                .overflow-guard{
+                    border-radius: 5px;
+                    width: 100%!important;
+                    height: 100%!important;
+                    .monaco-scrollable-element{
+                        width: calc(100% - 101px)!important;
+                        height: 100%!important;
+                    }
+                    .minimap.slider-mouseover{
+                        right: 0px;
+                        left: auto!important;
+                    }
+                }
+            }
+        }
+    }
+}
+.zoomOn{
+    &.editor-mika-sample-html,
+    &.editor-mika-sample-js,
+    &.editor-mika-sample-css{
+        position: absolute;
+        width: 98%;
+        height: 95%;
+        z-index: 12;
+        transition: all .3s;
+        left: 1%;
+    }
+    &.mika-mona-preview{
+        transition: all .3s;
+        height: 94%;
+        width: 98%;
+        text-align: center;
+        left: 1%;
+        top: 30px;
+        z-index: 123456;
+        background: #fff;
+        .mika-mona-preview-header{
+            transition: all .3s;
+            background: #dedede;
+            padding-left: 20px;
+            border-radius: 10px 10px 0px 0px;
+            cursor: pointer;
+            width: 100%;
+            padding: 0px;
+            text-align: center;
+            font-size: 26px;
+            line-height: 29px;
+            top: -30px;
+            height: 30px;
+            left: 0px;
+        }
+    }
+    
+    .mika-mona-center-editor-header{
+        transition: all .3s;
+        background: #dedede;
+        padding-left: 20px;
+        border-radius: 10px 10px 0px 0px;
+        cursor: pointer;
+        width: 100%;
+        padding: 0px;
+        text-align: center;
+        font-size: 26px;
+        line-height: 29px;
+        top: 0px;
+        height: 30px;
+    }
+    .mika-mona-preview-header:after,
+    .mika-mona-center-editor-header:after{
+        content: 'x';
+        position: absolute;
+        right: 20px
+    }
+}
+
+.editor-mika-sample-js{
+    left: 67%;
+}
+.editor-mika-sample-css{
+    left: 34%;
+
+}
+.mika-mona-center-editor{
+    position: relative;
+}
+.mika-mona-center-editor-header{
+    transition: all .3s;
+    background: #dedede;
+    width: 100px;
+    position: absolute;
+    top: 8px;
+    left: 0px;
+    padding-left: 20px;
+    border-radius: 0px 10px 0px 0px;
+}
+.shadow-result{
+    position: relative;
+    height: 100%;
+    width: 100%;
+    overflow: auto;
+}
+.mika-mona-preview{
+    transition: all .3s;
+    position: absolute;
+    width: 98%;
+    top: calc(40% + 54px);
+    left: 1%;
+    height: calc(60% - 64px);
+    border: 1px solid #dedede;
+    border-radius: 5px;
+}
+.mika-mona-preview .mika-mona-preview-header{
+   position: absolute;
+   top: -24px;
+}
+.mika-mona-preview .mika-mona-preview-header,
+.mika-mona-center-editor-header{
+    transition: all .3s;
+    background: #dedede;
+    width: 100px;
+    padding-left: 20px;
+    border-radius: 0px 10px 0px 0px;
+    cursor: pointer;
+}
+
+@media screen and (max-width:960px){
+    #root{
+        overflow: auto;
+    }
+    .editor-mika-sample{
+        display: block;
+        overflow: auto;
+    }
+    .editor-mika-sample-html,
+    .editor-mika-sample-js,
+    .editor-mika-sample-css{
+        position: relative;
+        width: 98%;
+        height: 50%;
+        margin: auto;
+        left: auto;
+    }
+    .mika-mona-preview{
+        position: relative;
+        top: auto;
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+    .mika-mona-preview .mika-mona-preview-header{
+        transition: all .3s;
+        top: 0px;
+    }
+}
+.shadow-result::-webkit-scrollbar,
+.mika-mona-preview::-webkit-scrollbar,
+.editor-mika-sample::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+    background: #ffffff00;
+}
+/*定义滚动条轨道*/
+.shadow-result::-webkit-scrollbar-track
+.mika-mona-preview::-webkit-scrollbar-track,
+.editor-mika-sample::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 0px rgba(240, 240, 240, .5);
+    border-radius: 10px;
+    background: #fff;
+}
+/*定义滑块*/
+.shadow-result::-webkit-scrollbar-thumb,
+.mika-mona-preview::-webkit-scrollbar-thumb,
+.editor-mika-sample::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    box-shadow: inset 0 0 0px rgba(118, 118, 118, 0.5);
+    background-color: #6a5f54;
+}

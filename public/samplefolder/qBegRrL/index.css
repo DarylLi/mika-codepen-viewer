@@ -1,0 +1,27 @@
+@import url("https://fonts.googleapis.com/css2?family=Eagle+Lake&family=Roboto+Slab&display=swap");
+
+        body {
+            display: flex;
+            justify-content: center;
+        }
+        p {
+            max-width: 50%;
+            font-size: 20px;
+            text-align: justify;
+            font-family: "Eagle Lake", serif;
+            font-weight: 400;
+            font-style: normal;
+        }
+        
+        p::first-letter {
+            -webkit-initial-letter: 12;
+            initial-letter: 12;
+            margin: -1em 18px -24px 0;
+            color: transparent;
+            background: url(https://assets.codepen.io/11614/william-morris-letter-a.svg)
+                no-repeat 0 0 / contain;
+        }
+        
+        .c::first-letter {
+            background-image: url(https://assets.codepen.io/11614/william-morris-letter-c.svg);
+        }
